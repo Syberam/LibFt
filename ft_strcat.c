@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 21:53:07 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/02 22:07:57 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/10 20:11:46 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strcat(char *s1, const char *s2)
 		s1[ls1 + i] = s2[i];
 		i++;
 	}
-	s1[sl1 + i] = 0;
+	s1[ls1 + i] = 0;
 	return (s1);
 }

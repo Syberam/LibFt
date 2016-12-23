@@ -6,22 +6,20 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 20:50:10 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/08 22:03:45 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/14 17:27:37 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_natoi(const char *str, size_t n);
-
-int			ft_len_num(const char *str)
+static int	ft_len_num(const char *str)
 {
 	size_t	i;
 	size_t	len;
 
 	i = 0;
 	len = 0;
-	while (str[i] < 33 || str[i] > 126)
+	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
 		i++;
 	if (str[i] == 45 || str[i] == 43)
 		i++;
@@ -35,7 +33,7 @@ int			ft_len_num(const char *str)
 	return (len);
 }
 
-int			ft_natoi(const char *str, size_t n)
+static int	ft_natoi(const char *str, size_t n)
 {
 	int		nb;
 	size_t	i;
@@ -50,7 +48,7 @@ int			ft_natoi(const char *str, size_t n)
 	return (nb);
 }
 
-int			ft_atoi_neg(const char *str, size_t i, int nb)
+static int	ft_atoi_neg(const char *str, size_t i, int nb)
 {
 	if (ft_len_num(str) > 19)
 		return (0);
@@ -70,7 +68,7 @@ int			ft_atoi_neg(const char *str, size_t i, int nb)
 	return (nb);
 }
 
-int			ft_atoi_pos(const char *str, size_t i, int nb)
+static int	ft_atoi_pos(const char *str, size_t i, int nb)
 {
 	if (ft_len_num(str) > 19)
 		return (-1);
@@ -97,7 +95,7 @@ int			ft_atoi(const char *str)
 
 	i = 0;
 	nb = 0;
-	while (str[i] < 33 || str[i] > 126)
+	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
 		i++;
 	if (str[i] == 45 || str[i] == 43)
 		i++;

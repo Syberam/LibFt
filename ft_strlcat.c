@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 17:38:26 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/06 15:10:51 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/14 15:20:15 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	ldst = ft_strlen(dst);
 	if (size <= ldst)
 		return (size + ft_strlen(src));
-	while (i + ldst + 1 < size)
+	while (i + ldst + 1 < size && src[i] != 0)
 	{
 		dst[i + ldst] = src[i];
 		i++;

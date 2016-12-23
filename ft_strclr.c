@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 22:10:57 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/13 16:33:27 by sbonnefo         ###   ########.fr       */
+/*   Created: 2016/12/09 15:26:33 by sbonnefo          #+#    #+#             */
+/*   Updated: 2016/12/15 22:47:36 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+void	ft_strclr(char *s)
 {
 	size_t	i;
-	size_t	ls1;
 
 	i = 0;
-	ls1 = ft_strlen(s1);
-	while (i < n && s2[i] != 0)
+	if (s)
 	{
-		s1[ls1 + i] = s2[i];
-		i++;
+		while (s[i] != 0)
+		{
+			s[i] = 0;
+			i++;
+		}
 	}
-	s1[ls1 + i] = 0;
-	return (s1);
 }

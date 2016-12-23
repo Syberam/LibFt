@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 20:31:36 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/14 16:03:03 by sbonnefo         ###   ########.fr       */
+/*   Created: 2016/12/11 18:33:29 by sbonnefo          #+#    #+#             */
+/*   Updated: 2016/12/13 19:50:34 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	i;
+	t_list	*link;
 
-	if (n <= 0)
+	if (!(link = (t_list *)malloc(sizeof(t_list))))
 		return (0);
-	i = 0;
-	while (s1[i] == s2[i] && i < n - 1 && (s1[i] != 0 || s2[i] != 0))
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (content == NULL)
+	{
+		link->content = NULL;
+		link->content_size = 0;
+	}
+	else
+	{
+		if (!(link->content = ft_memalloc(sizeof(*content) * content_size)))
+			return (NULL);
+		link->content = ft_memcpy(link->content, content, content_size);
+		link->content_size = content_size;
+	}
+	link->next = NULL;
+	return (link);
 }

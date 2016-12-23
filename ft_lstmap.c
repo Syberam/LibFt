@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 22:10:57 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/13 16:33:27 by sbonnefo         ###   ########.fr       */
+/*   Created: 2016/12/15 13:31:16 by sbonnefo          #+#    #+#             */
+/*   Updated: 2016/12/15 22:12:58 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *element))
 {
-	size_t	i;
-	size_t	ls1;
+	t_list	*start;
+	t_list	*link;
 
-	i = 0;
-	ls1 = ft_strlen(s1);
-	while (i < n && s2[i] != 0)
+	if (!f || !lst)
+		return (NULL);
+	if (!(link = (t_list *)malloc(sizeof(t_list *))))
+		return (NULL);
+	link = (*f)(lst);
+	start = link;
+	lst = lst->next;
+	while (lst)
 	{
-		s1[ls1 + i] = s2[i];
-		i++;
+		if (!(link->next = (t_list *)malloc(sizeof(t_list *))))
+			return (NULL);
+		link->next = (*f)(lst);
+		link = link->next;
+		lst = lst->next;
 	}
-	s1[ls1 + i] = 0;
-	return (s1);
+	return (start);
 }

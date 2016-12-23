@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 22:10:57 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/13 16:33:27 by sbonnefo         ###   ########.fr       */
+/*   Created: 2016/12/09 19:34:06 by sbonnefo          #+#    #+#             */
+/*   Updated: 2016/12/16 11:51:10 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char		*ft_strtrim(char const *s)
 {
-	size_t	i;
-	size_t	ls1;
+	size_t	st;
+	size_t	nd;
+	size_t	ls;
 
-	i = 0;
-	ls1 = ft_strlen(s1);
-	while (i < n && s2[i] != 0)
-	{
-		s1[ls1 + i] = s2[i];
-		i++;
-	}
-	s1[ls1 + i] = 0;
-	return (s1);
+	if (!s)
+		return (NULL);
+	st = 0;
+	nd = 0;
+	ls = ft_strlen(s) - 1;
+	while (s[st] == ' ' || s[st] == '\n' || s[st] == '\t')
+		st++;
+	if (st == ls + 1)
+		return (ft_strdup(s + st));
+	while (s[ls - nd] == ' ' || s[ls - nd] == '\n' || s[ls - nd] == '\t')
+		nd++;
+	return (ft_strsub(s, st, ls - st - nd + 1));
 }

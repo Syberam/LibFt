@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 15:50:45 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/01 17:08:33 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/13 18:50:49 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void				*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	cc;
 	size_t			cnt;
 
-	if (s == 0)
-		return (NULL);
 	cs = (unsigned char *)s;
 	cc = c;
 	cnt = 0;

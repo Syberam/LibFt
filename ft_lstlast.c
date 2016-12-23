@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 22:10:57 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/13 16:33:27 by sbonnefo         ###   ########.fr       */
+/*   Created: 2016/12/15 15:48:42 by sbonnefo          #+#    #+#             */
+/*   Updated: 2016/12/15 18:04:08 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-	size_t	ls1;
-
-	i = 0;
-	ls1 = ft_strlen(s1);
-	while (i < n && s2[i] != 0)
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next)
 	{
-		s1[ls1 + i] = s2[i];
-		i++;
+		lst = lst->next;
 	}
-	s1[ls1 + i] = 0;
-	return (s1);
+	return (lst);
 }

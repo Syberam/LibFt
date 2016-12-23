@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 16:57:02 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/06 18:07:06 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/14 20:04:29 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strstr(const char *big, const char *little)
 
 	b = (char *)big;
 	ib = 0;
+	if (big[ib] == '\0' && little[0] == '\0')
+		return (b);
 	while (big[ib] != 0)
 	{
 		il = 0;

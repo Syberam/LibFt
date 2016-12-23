@@ -6,13 +6,13 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 19:21:16 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/08 19:21:44 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2016/12/10 20:06:58 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s, int fd)
+void	ft_putendl(char const *s)
 {
 	int		i;
 
