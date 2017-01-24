@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 10:21:08 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/15 22:37:50 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/24 18:42:43 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_ext_strjoin_free(char const *s1, char const *s2, size_t mal);
 char				*ft_strtrim(char const *s);
 char				*ft_itoa(int n);
 
