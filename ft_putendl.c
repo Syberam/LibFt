@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 19:21:16 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/10 20:06:58 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/25 17:32:14 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	ft_putendl(char const *s)
 {
-	int		i;
-
-	i = 0;
-	while (s[i] != 0)
-	{
-		ft_putchar_fd(s[i], 1);
-		i++;
-	}
+	ft_putstr_fd(s, 1);
 	ft_putchar_fd('\n', 1);
 }
