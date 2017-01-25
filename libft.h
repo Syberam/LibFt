@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 10:21:08 by sbonnefo          #+#    #+#             */
-/*   Updated: 2017/01/24 18:42:43 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/25 15:48:46 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
+void				ft_putstri(const char *s, size_t len);
+void				ft_putstr_fd(char const *s, int fd);
+void				ft_putstri_fd(char const *s, size_t len, int fd);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
@@ -92,7 +94,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void				ft_putstri(const char *s, size_t len);
 char				*ft_strnchr(const char *s, int c, int n);
 void				ft_lstadd_bwd(t_list **alst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
