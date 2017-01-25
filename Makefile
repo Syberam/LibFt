@@ -6,7 +6,7 @@
 #    By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/10 18:28:41 by sbonnefo          #+#    #+#              #
-#    Updated: 2016/12/16 11:53:19 by sbonnefo         ###   ########.fr        #
+#    Updated: 2017/01/25 18:22:20 by sbonnefo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ SRC = ft_itoa.c \
 		ft_power.c \
 		ft_strcat.c \
 		ft_strjoin.c \
+		ft_ext_strjoin_free.c \
 		ft_strnew.c \
 		ft_isdigit.c \
 		ft_lstnew.c \
@@ -75,7 +76,9 @@ SRC = ft_itoa.c \
 		ft_putchar_fd.c \
 		ft_strclr.c \
 		ft_strlen.c \
-		ft_strrchr.c
+		ft_strrchr.c \
+		ft_strrchrcpy.c \
+		ft_strchrcpy.c
 
 OBJ = $(SRC:%.c=%.o) 
 
