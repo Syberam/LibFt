@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:33:11 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/13 20:49:58 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/25 15:42:49 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int		i;
+	int		l;
 
-	i = 0;
-	while (s[i] != 0)
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	len = ft_strlen(s);
+	write(fd, s, l);
 }
