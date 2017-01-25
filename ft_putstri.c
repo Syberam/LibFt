@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 16:20:31 by sbonnefo          #+#    #+#             */
-/*   Updated: 2016/12/15 20:38:39 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/25 15:40:28 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void		ft_putstri(char const *s, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != 0 && i < len - 1)
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	write(1, s, len);
 }
