@@ -6,7 +6,7 @@
 /*   By: sbonnefo <sbonnefo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/13 18:25:02 by sbonnefo          #+#    #+#             */
-/*   Updated: 2017/01/31 16:20:34 by sbonnefo         ###   ########.fr       */
+/*   Updated: 2017/01/31 19:02:39 by sbonnefo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void				ft_fill_line(char **line, char *buff)
 {
 	char			*tmp;
 
-	tmp = (char *)ft_memalloc(sizeof(char) * BUFF_SIZE);
+	tmp = (char *)ft_memalloc(sizeof(char) * (BUFF_SIZE + 1));
 	if (*line)
 		*line = ft_ext_strjoin_free(*line, ft_strchrcpy(tmp, buff, '\n'), 3);
 	else
@@ -37,17 +37,14 @@ int					get_next_line(const int fd, char **line)
 		return (-1);
 	*line = NULL;
 	if (!buff)
-		buff = (char *)ft_memalloc(sizeof(char) * BUFF_SIZE + 1);
+		buff = (char *)ft_memalloc(sizeof(char) * (BUFF_SIZE + 1));
 	while (nbread > 0)
 	{
 		if (!*buff)
 		{
 			nbread = read(fd, buff, BUFF_SIZE);
 			if (!*line && nbread == 0)
-			{
-				free(buff);
 				return (0);
-			}
 			buff[nbread] = 0;
 		}
 		if (ft_strchr(buff, '\n'))
