@@ -77,8 +77,8 @@ SRC = ft_itoa.c \
 		ft_strclr.c \
 		ft_strlen.c \
 		ft_strrchr.c \
-		ft_strrchrcpy.c \
-		ft_strchrcpy.c
+		ft_strrccpy.c \
+		ft_strccpy.c
 
 OBJ = $(SRC:%.c=%.o) 
 
